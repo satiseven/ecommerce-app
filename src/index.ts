@@ -20,6 +20,6 @@ app.get("/api/hello/:name/:age", (req, res) => {
   const { name, age } = req.params;
   res.json({ message: `Hello ${name}, you are ${age} years old` });
 });
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
