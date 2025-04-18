@@ -23,9 +23,7 @@ jobs:
           install_components: gke-gcloud-auth-plugin
 
       - name: Configure Docker for Artifact Registry
-        run: |
-          gcloud auth configure-docker europe-central2-docker.pkg.dev
-
+        run: gcloud auth configure-docker europe-docker.pkg.dev,eu.gcr.io
       - name: Build & Push Docker image
         run: |
           docker build --platform linux/amd64 -t eu.gcr.io/review-ai-453511/node-app .
