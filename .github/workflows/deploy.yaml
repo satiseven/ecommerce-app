@@ -22,7 +22,9 @@ jobs:
 
       - name: Configure Docker
         run: gcloud auth configure-docker
-
+      - name: Install gke-gcloud-auth-plugin
+        run: |
+          sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
       - name: Build & Push Docker image
         run: |
           docker build -t eu.gcr.io/review-ai-453511/my-node-app .
