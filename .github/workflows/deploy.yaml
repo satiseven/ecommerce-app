@@ -28,8 +28,8 @@ jobs:
 
       - name: Build & Push Docker image
         run: |
-          docker build -t europe-central2-docker.pkg.dev/review-ai-453511/my-repo/my-node-app:latest .
-          docker push europe-central2-docker.pkg.dev/review-ai-453511/my-repo/my-node-app:latest
+          docker build --platform linux/amd64 -t eu.gcr.io/review-ai-453511/my-node-app .
+          docker push eu.gcr.io/review-ai-453511/my-node-app
 
       - name: Get GKE Credentials
         run: |
